@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Footer from "./Footer";
 import Home from "./Home";
 import Navbar from "./Navbar";
 import Orders from "./Orders";
@@ -17,6 +18,7 @@ function Routes(){
         </Route>
 
       </Switch>
+      <Footer />
     </BrowserRouter>
   )
 }
