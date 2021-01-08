@@ -1,13 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import AsyncSelect from 'react-select/async';
+import { toast } from 'react-toastify';
 import { fetchLocalMapBox } from '../api';
 import { OrderLocationData } from './types';
-
-const initialPosition = {
-  lat: -20.8536947,
-  lng: -41.1504762
-};
 
 type Place = {
   label?: string,
@@ -23,10 +19,36 @@ type Props = {
 }
 
 function OrderLocation({ onChangeLocation } : Props) {
-
   const [address, setAddress] = useState<Place>({
-    position: initialPosition
-  })
+    position: {
+      lat: 0,
+      lng: 0
+      }
+  });
+
+  useEffect(() =>{
+    navigator.geolocation.getCurrentPosition(
+      (currentPosition) =>{
+        const {latitude, longitude} = currentPosition.coords;
+        
+        const place = {
+          label: '',
+          value: '',
+          position: {
+          lat: latitude,
+          lng: longitude
+          }
+        }
+        setAddress(place);
+      },
+      (err) =>{
+        toast.error('Erro ao obter localização!')
+      },
+      {
+        timeout: 30000
+      }
+    )    
+  },[]);
 
   const loadOptions = async (inputValue: string, callback: (places: Place[]) => void) => {
     const response = await fetchLocalMapBox(inputValue);
