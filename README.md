@@ -22,7 +22,6 @@ Posteriormente informará o endereço para entrega e confirmar a efetuação.
 <p align="center"><img src="/readme/order.png" width="600" /></p>
 
 ### FrontEnd Mobile
-No mobile o entregador poderá ver os pedidos ainda não entregues ordenados do mais antigo para o mais recente, podendo a partir de um pedido: Iniciar a navegação gps para o endereço,
-confirmar a entrega ou cancelar e voltar para a tela de pedidos.:
+No mobile o entregador poderá ver os pedidos ainda não entregues ordenados do mais antigo para o mais recente, podendo a partir de um pedido: Iniciar a navegação gps para o endereço, confirmar a entrega ou cancelar e voltar para a tela de pedidos:
 
 <p align="center"><img src="/readme/mobile.gif" width="300" /></p>
