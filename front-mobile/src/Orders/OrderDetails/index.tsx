@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Alert, Image, StyleSheet, Text, View } from 'react-native';
+import { Alert, Image, Linking, StyleSheet, Text, View } from 'react-native';
 import Header from '../../Header';
 import { Order } from '../../types';
 import Card from '../Card';
@@ -20,7 +20,7 @@ export default function OrderDetails({ route } : Props) {
   const navigation = useNavigation();
 
   const handleNavigate = () => {
-    
+    Linking.openURL(`https://www.google.com/maps/dir/?api=1&travelmode=driving&dir_action=navigate&destination=${order.latitude},${order.longitude}`)
   }
   const handleConfirmDelivery = () => {
     confirmDelivery(order.id)
