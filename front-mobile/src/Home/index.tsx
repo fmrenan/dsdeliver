@@ -1,7 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Header from '../Header';
 
 export default function Home() {
@@ -24,9 +23,9 @@ export default function Home() {
         
       </View>
       <View style={styles.footer}>
-          <RectButton style={styles.button} onPress={handleOnPress}>
+          <TouchableOpacity style={styles.button} onPress={handleOnPress}>
             <Text style={styles.buttonText}>VER PEDIDOS</Text>
-          </RectButton>
+          </TouchableOpacity>
       </View>
 
     </>
