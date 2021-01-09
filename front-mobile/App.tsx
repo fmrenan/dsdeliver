@@ -4,6 +4,8 @@ import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Routes from './src/routes';
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
 
 export default function App() {
   let [fontsLoaded] = useFonts({

@@ -1,5 +1,4 @@
 import React from 'react';
-import { OpenSans_700Bold } from '@expo-google-fonts/open-sans';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
